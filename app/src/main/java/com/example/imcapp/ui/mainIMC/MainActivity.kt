@@ -1,4 +1,4 @@
-package com.example.imcapp
+package com.example.imcapp.ui.mainIMC
 
 import android.app.AlertDialog
 import android.content.Intent
@@ -6,7 +6,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.KeyEvent
 import android.widget.Toast
+import com.example.imcapp.data.service.IMCService
+import com.example.imcapp.R
+import com.example.imcapp.data.local.Gender
 import com.example.imcapp.databinding.ActivityMainBinding
+import com.example.imcapp.ui.resultIMC.ResultIMCActivity
 
 class MainActivity : AppCompatActivity() {
     private var selectGender: Gender = Gender.NONE
@@ -51,7 +55,7 @@ class MainActivity : AppCompatActivity() {
             IMCService.currentHeight = value/100
         }
         binding.btnUpWeight.setOnClickListener {
-            IMCService.currentWeight = IMCService.currentWeight + 1
+            IMCService.currentWeight += 1
             setWeight()
         }
         binding.btnDownWeight.setOnClickListener {
@@ -65,7 +69,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
         binding.btnUpAge.setOnClickListener {
-            IMCService.currentAge = IMCService.currentAge + 1
+            IMCService.currentAge += 1
             setAge()
         }
         binding.btnDownAge.setOnClickListener {
@@ -80,7 +84,7 @@ class MainActivity : AppCompatActivity() {
         binding.btnCalculator.setOnClickListener {
             if(IMCService.currentGender != Gender.NONE){
                 IMCService.calculateIMC()
-                startActivity(Intent(this,ResultIMCActivity::class.java))
+                startActivity(Intent(this, ResultIMCActivity::class.java))
             }else{
                 Toast.makeText(this, "Seleccione su género", Toast.LENGTH_SHORT).show()
             }

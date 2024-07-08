@@ -13,11 +13,11 @@
         android:theme="@style/Theme.IMCAPP"
         tools:targetApi="31">
         <activity
-            android:name=".ResultIMCActivity"
+            android:name=".ui.resultIMC.ResultIMCActivity"
             android:exported="false"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".ui.mainIMC.MainActivity"/>
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.mainIMC.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -7,7 +7,7 @@
     android:background="@color/background_app"
     android:paddingHorizontal="16dp"
     android:paddingVertical="32dp"
-    tools:context=".MainActivity">
+    tools:context=".ui.mainIMC.MainActivity">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/viewMale"

@@ -1,10 +1,12 @@
-package com.example.imcapp
+package com.example.imcapp.ui.resultIMC
 
 import android.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.KeyEvent
 import androidx.core.content.ContextCompat
+import com.example.imcapp.data.service.IMCService
+import com.example.imcapp.R
 import com.example.imcapp.databinding.ActivityResultImcactivityBinding
 
 class ResultIMCActivity : AppCompatActivity() {
@@ -39,22 +41,22 @@ class ResultIMCActivity : AppCompatActivity() {
         when(resultIMC){
             in 0.00..18.50 -> {
                 binding.tvResult.text = getString(R.string.title_bajo_peso)
-                binding.tvResult.setTextColor(ContextCompat.getColor(this,R.color.peso_bajo))
+                binding.tvResult.setTextColor(ContextCompat.getColor(this, R.color.peso_bajo))
                 binding.tvDescription.text = getString(R.string.bajoPesoDes, resultIMC.toString())
             }
             in 18.51..24.99 -> {
                 binding.tvResult.text = getString(R.string.title_peso_normal)
-                binding.tvResult.setTextColor(ContextCompat.getColor(this,R.color.peso_normal))
+                binding.tvResult.setTextColor(ContextCompat.getColor(this, R.color.peso_normal))
                 binding.tvDescription.text = getString(R.string.pesonormalDes, resultIMC.toString())
             }
             in 25.00..29.99 -> {
                 binding.tvResult.text = getString(R.string.title_sobrepeso)
-                binding.tvResult.setTextColor(ContextCompat.getColor(this,R.color.peso_sobrepeso))
+                binding.tvResult.setTextColor(ContextCompat.getColor(this, R.color.peso_sobrepeso))
                 binding.tvDescription.text = getString(R.string.sobrepesoDes, resultIMC.toString())
             }
             in 30.00..99.00 -> {
                 binding.tvResult.text = getString(R.string.title_obesidad)
-                binding.tvResult.setTextColor(ContextCompat.getColor(this,R.color.obesidad))
+                binding.tvResult.setTextColor(ContextCompat.getColor(this, R.color.obesidad))
                 binding.tvDescription.text = getString(R.string.obesidadDes, resultIMC.toString())
             }
         }

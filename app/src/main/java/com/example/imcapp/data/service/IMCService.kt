@@ -1,4 +1,6 @@
-package com.example.imcapp
+package com.example.imcapp.data.service
+
+import com.example.imcapp.data.local.Gender
 
 class IMCService {
 
